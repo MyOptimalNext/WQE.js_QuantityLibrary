@@ -1,6 +1,6 @@
 # WQE.js License
 
-**Copyright © [2024]**
+**Copyright © [2024 Loukmane Hadj Said]**
 
 ## 1. Permitted Use:
 - This program may be used for personal or educational purposes only.
