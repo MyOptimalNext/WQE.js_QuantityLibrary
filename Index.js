@@ -1,5 +1,5 @@
 // بوابات الـ single-qubit
-import XGate from './gates/single_qubit/XGate.js';
+import XGate from 'https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/single_qubit/XGate.js';
 import YGate from './gates/single_qubit/YGate.js';
 import ZGate from './gates/single_qubit/ZGate.js';
 import HGate from './gates/single_qubit/HGate.js';
