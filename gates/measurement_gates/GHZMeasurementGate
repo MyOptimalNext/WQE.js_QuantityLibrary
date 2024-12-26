@@ -1,0 +1,20 @@
+class GHZMeasurementGate {
+  constructor() {
+    this.name = 'GHZMeasurementGate';
+  }
+
+  apply(qubits) {
+    // قياس حالة GHZ
+    const state = qubits.map(qubit => qubit.state);
+    const randomState = Math.floor(Math.random() * 2); // اختيار حالة عشوائية إما 0 أو 1
+
+    qubits.forEach(qubit => {
+      qubit.state = randomState;
+    });
+
+    console.log(`GHZ state measured: ${state}`);
+    return qubits;
+  }
+}
+
+module.exports = GHZMeasurementGate;
