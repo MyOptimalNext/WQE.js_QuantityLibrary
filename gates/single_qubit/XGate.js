@@ -18,4 +18,4 @@ class XGate {
   }
 }
 
-module.exports = XGate;
+export default XGate;
