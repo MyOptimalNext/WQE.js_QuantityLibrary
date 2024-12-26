@@ -1,0 +1,1 @@
+https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/Index.js
