@@ -51,12 +51,6 @@ import AmplitudeDampingGate from './gates/noise_gates/AmplitudeDampingGate.js';
 import PhaseDampingGate from './gates/noise_gates/PhaseDampingGate.js';
 import ThermalRelaxationGate from './gates/noise_gates/ThermalRelaxationGate.js';
 
-// بوابات non-clifford
-import TGate from './gates/non_clifford_gates/TGate.js';
-import SGate from './gates/non_clifford_gates/SGate.js';
-import VGate from './gates/non_clifford_gates/VGate.js';
-import FSimGate from './gates/non_clifford_gates/FSimGate.js';
-
 // بوابات القياس القياسية
 import XMeasurementGate from './gates/standard_measurement_gates/XMeasurementGate.js';
 import YMeasurementGate from './gates/standard_measurement_gates/YMeasurementGate.js';
@@ -84,8 +78,6 @@ export {
     MeasureGate, ResetGate, BellStateMeasurementGate, GHZMeasurementGate,
     // بوابات noise
     DepolarizingGate, AmplitudeDampingGate, PhaseDampingGate, ThermalRelaxationGate,
-    // بوابات non-clifford
-    TGate as NonCliffordTGate, SGate as NonCliffordSGate, VGate as NonCliffordVGate, FSimGate as NonCliffordFSimGate,
     // بوابات القياس القياسية
     XMeasurementGate, YMeasurementGate, ZMeasurementGate,
     // بوابات خاصة
