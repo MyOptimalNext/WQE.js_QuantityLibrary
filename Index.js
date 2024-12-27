@@ -3,12 +3,7 @@ export { default as XGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.
 export { default as YGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/single_qubit/YGate.js";
 export { default as ZGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/single_qubit/ZGate.js";
 export { default as HGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/single_qubit/HGate.js";
-export { default as SGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/single_qubit/SGate.js";
-export { default as TGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/single_qubit/TGate.js";
 export { default as IdentityGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/single_qubit/IdentityGate.js";
-export { default as RXGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/single_qubit/RXGate.js";
-export { default as RYGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/single_qubit/RYGate.js";
-export { default as RZGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/single_qubit/RZGate.js";
 export { default as PhasedXZGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/single_qubit/PhasedXZGate.js";
 export { default as UGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/single_qubit/UGate.js";
 // Controlled Gates
@@ -41,9 +36,9 @@ export { default as TGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.
 export { default as SGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/phase_gates/SGate.js";
 export { default as VGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/phase_gates/VGate.js";
 // Rotation Gates
-export { default as RxGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/rotation_gates/RxGate.js";
-export { default as RyGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/rotation_gates/RyGate.js";
-export { default as RzGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/rotation_gates/RzGate.js";
+export { default as RXGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/rotation_gates/RxGate.js";
+export { default as RYGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/rotation_gates/RyGate.js";
+export { default as RZGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/rotation_gates/RzGate.js";
 export { default as PhaseRotationGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/rotation_gates/PhaseRotationGate.js";
 // Measurement Gates
 export { default as MeasureGate } from "https://cdn.jsdelivr.net/gh/MyOptimalNext/WQE.js_QuantumLib@main/gates/measurement_gates/MeasureGate.js";
