@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منتدى الفتية - النادي العلمي</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #00509e;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header img {
+            width: 50px;
+            vertical-align: middle;
+        }
+        header h1 {
+            display: inline-block;
+            margin: 0;
+            font-size: 1.8rem;
+            vertical-align: middle;
+        }
+        footer {
+            background: #003f7d;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        footer a {
+            color: #a0c4ff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2, h3 {
+            color: #00509e;
+        }
+        pre {
+            background: #2c3e50;
+            color: white;
+            border-left: 5px solid #00509e;
+            padding: 10px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        code {
+            background: none;
+            padding: 0;
+            font-family: monospace;
+        }
+        .copy-btn-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        button {
+            background-color: #00509e;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #003f7d;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://via.placeholder.com/50" alt="شعار الجمعية">
+        <h1>منتدى الفتية - النادي العلمي</h1>
+    </header>
+
+    <div class="content" id="content-section">
+        <!-- سيتم تحميل المحتوى هنا عبر JSON -->
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2025 - منتدى الفتية</p>
+        <p>برمجة وتصميم بواسطة <a href="https://github.com">لقمان الحاج سعيد</a></p>
+    </footer>
+
+    <script>
+        // تحميل البيانات من ملف JSON
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                // تحديد قسم المحتوى
+                let contentSection = document.getElementById('content-section');
+                
+                // استعراض المحتوى من JSON وإضافته إلى الصفحة
+                data.content.forEach(article => {
+                    let articleElem = document.createElement('article');
+                    
+                    // إضافة العنوان
+                    let titleElem = document.createElement('h2');
+                    titleElem.textContent = article.title;
+                    articleElem.appendChild(titleElem);
+                    
+                    // إضافة الوصف أو الشرح
+                    let descriptionElem = document.createElement('p');
+                    descriptionElem.textContent = article.description;
+                    articleElem.appendChild(descriptionElem);
+                    
+                    // إضافة الأكواد
+                    if (article.code) {
+                        let codeElem = document.createElement('pre');
+                        let codeContent = document.createElement('code');
+                        codeContent.textContent = article.code;
+                        codeElem.appendChild(codeContent);
+
+                        // إضافة زر نسخ الكود
+                        let copyButtonContainer = document.createElement('div');
+                        copyButtonContainer.classList.add('copy-btn-container');
+
+                        let codeButton = document.createElement('button');
+                        codeButton.textContent = 'نسخ الكود';
+                        codeButton.onclick = () => copyToClipboard(article.code);
+
+                        copyButtonContainer.appendChild(codeButton);
+                        codeElem.appendChild(copyButtonContainer);
+
+                        articleElem.appendChild(codeElem);
+                    }
+                    
+                    // إضافة المقال إلى القسم
+                    contentSection.appendChild(articleElem);
+                });
+            })
+            .catch(error => console.error('Error loading JSON file:', error));
+
+        // دالة نسخ الكود إلى الحافظة
+        function copyToClipboard(code) {
+            const textArea = document.createElement('textarea');
+            textArea.value = code;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('تم نسخ الكود!');
+        }
+    </script>
+
+</body>
+</html>
