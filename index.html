@@ -1,168 +1,103 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منتدى الفتية - النادي العلمي</title>
+    <title>تنظيم النصوص والأكواد في HTML</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #00509e;
-            color: white;
-            padding: 20px 10px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        header img {
-            width: 50px;
-            vertical-align: middle;
-        }
-        header h1 {
-            display: inline-block;
-            margin: 0;
-            font-size: 1.8rem;
-            vertical-align: middle;
-        }
-        footer {
-            background: #003f7d;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-        footer a {
-            color: #a0c4ff;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        .content {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        h2, h3 {
-            color: #00509e;
+            line-height: 1.6;
+            margin: 20px;
         }
         pre {
-            background: #2c3e50;
-            color: white;
-            border-left: 5px solid #00509e;
+            background-color: #f4f4f4;
             padding: 10px;
+            border: 1px solid #ddd;
             overflow-x: auto;
-            font-size: 0.9rem;
-            position: relative;
         }
         code {
-            background: none;
-            padding: 0;
-            font-family: monospace;
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
         }
-        .copy-btn-container {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        button {
-            background-color: #00509e;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #003f7d;
+        h1, h2 {
+            color: #333;
         }
     </style>
 </head>
 <body>
+    <h1>تعريف المتغيرات (Variables)</h1>
+    <p><strong>ما هو المتغير؟</strong></p>
+    <p>المتغير هو مساحة في الذاكرة لتخزين قيمة ما يمكن استخدامها لاحقًا.</p>
 
-    <header>
-        <img src="https://via.placeholder.com/50" alt="شعار الجمعية">
-        <h1>منتدى الفتية - النادي العلمي</h1>
-    </header>
+    <p><strong>أنواع المتغيرات في JavaScript:</strong></p>
+    <ul>
+        <li><code>var</code>: طريقة قديمة وغير مفضلة الآن.</li>
+        <li><code>let</code>: حديثة وتستخدم عند الحاجة لتغيير القيمة.</li>
+        <li><code>const</code>: حديثة وتستخدم للقيم الثابتة التي لا تتغير.</li>
+    </ul>
 
-    <div class="content" id="content-section">
-        <!-- سيتم تحميل المحتوى هنا عبر JSON -->
-    </div>
+    <p><strong>أمثلة:</strong></p>
+    <pre><code>let age = 25; // متغير يمكن تغيير قيمته لاحقًا
+const pi = 3.14; // ثابت، لا يمكن تغييره</code></pre>
 
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; 2025 - منتدى الفتية</p>
-        <p>برمجة وتصميم بواسطة <a href="https://github.com">لقمان الحاج سعيد</a></p>
-    </footer>
+    <h2>تعريف الثوابت (Constants)</h2>
+    <p><strong>ما هي الثوابت؟</strong></p>
+    <p>هي متغيرات قيمها لا تتغير بعد تعريفها باستخدام <code>const</code>.</p>
 
-    <script>
-        // تحميل البيانات من ملف JSON
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                // تحديد قسم المحتوى
-                let contentSection = document.getElementById('content-section');
-                
-                // استعراض المحتوى من JSON وإضافته إلى الصفحة
-                data.content.forEach(article => {
-                    let articleElem = document.createElement('article');
-                    
-                    // إضافة العنوان
-                    let titleElem = document.createElement('h2');
-                    titleElem.textContent = article.title;
-                    articleElem.appendChild(titleElem);
-                    
-                    // إضافة الوصف أو الشرح
-                    let descriptionElem = document.createElement('p');
-                    descriptionElem.textContent = article.description;
-                    articleElem.appendChild(descriptionElem);
-                    
-                    // إضافة الأكواد
-                    if (article.code) {
-                        let codeElem = document.createElement('pre');
-                        let codeContent = document.createElement('code');
-                        codeContent.textContent = article.code;
-                        codeElem.appendChild(codeContent);
+    <p><strong>أمثلة:</strong></p>
+    <pre><code>const country = "Algeria"; // ثابت، لا يمكن تغييره</code></pre>
 
-                        // إضافة زر نسخ الكود
-                        let copyButtonContainer = document.createElement('div');
-                        copyButtonContainer.classList.add('copy-btn-container');
+    <h2>أنواع البيانات (Data Types)</h2>
+    <p><strong>لماذا نهتم بأنواع البيانات؟</strong></p>
+    <p>لمعرفة كيفية التعامل مع القيم المخزنة في المتغيرات.</p>
 
-                        let codeButton = document.createElement('button');
-                        codeButton.textContent = 'نسخ الكود';
-                        codeButton.onclick = () => copyToClipboard(article.code);
+    <h3>أ) أنواع البيانات الأساسية (Primitive Types)</h3>
+    <p><strong>1. الأرقام (Number):</strong></p>
+    <p>لتخزين القيم العددية.</p>
+    <pre><code>let age = 30; // عدد صحيح
+let price = 19.99; // عدد عشري</code></pre>
 
-                        copyButtonContainer.appendChild(codeButton);
-                        codeElem.appendChild(copyButtonContainer);
+    <p><strong>2. النصوص (String):</strong></p>
+    <p>لتخزين النصوص.</p>
+    <pre><code>let name = "John";
+let greeting = "Hello, World!";</code></pre>
 
-                        articleElem.appendChild(codeElem);
-                    }
-                    
-                    // إضافة المقال إلى القسم
-                    contentSection.appendChild(articleElem);
-                });
-            })
-            .catch(error => console.error('Error loading JSON file:', error));
+    <p><strong>3. القيم المنطقية (Boolean):</strong></p>
+    <p>لتخزين القيم المنطقية: إما <code>true</code> أو <code>false</code>.</p>
+    <pre><code>let isStudent = true; // نعم، هو طالب
+let isOnline = false; // لا، غير متصل</code></pre>
 
-        // دالة نسخ الكود إلى الحافظة
-        function copyToClipboard(code) {
-            const textArea = document.createElement('textarea');
-            textArea.value = code;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            alert('تم نسخ الكود!');
-        }
-    </script>
+    <p><strong>4. غير معرف (Undefined):</strong></p>
+    <p>عندما لا يتم إعطاء المتغير أي قيمة.</p>
+    <pre><code>let x; // غير معرف</code></pre>
 
+    <p><strong>5. فارغ (Null):</strong></p>
+    <p>يعبر عن قيمة فارغة مخصصة.</p>
+    <pre><code>let y = null;</code></pre>
+
+    <h3>ب) أنواع البيانات الغير أساسية (Non-Primitive Types)</h3>
+    <p><strong>1. المصفوفات (Arrays):</strong></p>
+    <p>تستخدم لتخزين قائمة من القيم.</p>
+    <pre><code>let colors = ["red", "green", "blue"];</code></pre>
+
+    <p><strong>2. الكائنات (Objects):</strong></p>
+    <p>تستخدم لتخزين بيانات معقدة على شكل أزواج مفتاح وقيمة.</p>
+    <pre><code>let car = { brand: "Toyota", model: "Corolla", year: 2021 };</code></pre>
+
+    <h2>التحقق من نوع البيانات بدون تعقيد</h2>
+    <p>يمكن أن نشرح مفهوم "نوع البيانات" عبر كتابة أمثلة مباشرة، دون استخدام دوال مثل <code>console.log</code> أو مصطلحات متقدمة.</p>
+
+    <p><strong>مثال:</strong></p>
+    <pre><code>let number = 42; // نوعه رقم
+let name = "Alice"; // نوعه نص
+let isAvailable = true; // نوعه منطقي</code></pre>
+
+    <h2>نشاط عملي للطلاب</h2>
+    <p><strong>1. اطلب منهم تعريف متغيرات بأنواع مختلفة:</strong></p>
+    <pre><code>let myAge = 20;      // رقم
+let myName = "John"; // نص
+let isHappy = true;  // منطقي</code></pre>
 </body>
 </html>
